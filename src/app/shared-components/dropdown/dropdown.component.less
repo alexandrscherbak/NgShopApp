@@ -1,0 +1,45 @@
+.dropdown {
+	display: inline-block;
+	cursor: default;
+
+	span {
+		font-size: 16px;
+		font-family: "Quicksand";
+		color: rgb(66, 66, 66);
+		text-transform: uppercase;
+		line-height: 1.2;
+	}
+
+	.expanded {
+		position: absolute;
+		div {
+			padding-bottom: 10px;
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
+		background-color: rgb(245, 246, 247);
+	}
+
+	.arrow-down, .arrow-up {
+		cursor: pointer;
+		color: black;
+		&:after {
+			border-style: solid;
+			border-width: 0 2px 2px 0;
+			content: '';
+			padding: 4px;
+			vertical-align: middle;
+			display: inline-block;
+		}
+	}
+
+	.arrow-down:after {
+		transform: rotate(45deg);
+		margin-bottom: 8px;
+	}
+
+	.arrow-up:after {
+		transform: rotate(225deg);
+	}
+}

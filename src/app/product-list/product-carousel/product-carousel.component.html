@@ -1,0 +1,30 @@
+<div>
+	<div class="header">
+		<div [ngClass]="{title: !headerAlignLeft, 'title-on-the-right': headerAlignLeft}">
+			<hr *ngIf="headerAlignLeft">
+			<span>{{productList.title}}</span>
+			<hr *ngIf="!headerAlignLeft">
+		</div>
+		<div class="controls" [ngStyle]="{'text-align': headerAlignLeft ? 'left' : 'right'}">
+			<div><span>{{currentPage}} / {{pagesAmount}}</span></div>
+			<span class="arrow-left" (click)="scroll(false, list)"></span>
+			<span class="arrow-right" (click)="scroll(true, list)"></span>
+		</div>
+	</div>
+	<div class="carousel-container">
+		<div class="carousel-wrapper">
+			<div
+				class="carousel"
+				[style.transform]="'translateX('+amount+'px)'"
+				#list
+			>
+				<product-item
+					*ngFor="let item of productList.productList; let i = index"
+					[product]="item"
+					[ngStyle]="{'margin-left': getMargin(i), 'margin-right': getMargin(i)}"
+					(click)="onProductItemClicked(item.id)"
+				></product-item>
+			</div>
+		</div>
+	</div>
+</div>

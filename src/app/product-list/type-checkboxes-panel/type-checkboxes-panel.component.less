@@ -1,0 +1,78 @@
+.type-checkboxes-panel {
+	background-color: rgb(245, 246, 247);
+	display: flex;
+	justify-content: space-between;
+	padding: 25px 50px 25px 50px;
+
+	.checkboxes-container {
+		display: flex;
+		align-items: center;
+		label {
+			font-size: 18px;
+			font-family: "Quicksand";
+			color: rgb(51, 51, 51);
+			text-transform: uppercase;
+			line-height: 1.2;
+			padding-right: 45px;
+		}
+		
+		.container {
+			display: block;
+			position: relative;
+			padding-left: 50px;
+			cursor: pointer;
+			font-size: 22px;
+			user-select: none;
+
+			input {
+				position: absolute;
+				opacity: 0;
+				&:checked ~ .checkmark:after {
+					display: block;
+				}
+			}
+
+			input:checked ~ .checkmark {
+				border: solid 2px rgb(170, 155, 119);
+			}
+
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 29px;
+				height: 28px;
+				border: solid 2px rgb(204, 204, 204);
+				border-radius: 3px;
+				background-color: rgb(255, 255, 255);
+
+				&:after {
+					content: "";
+					position: absolute;
+					display: none;
+					left: 8px;
+					top: 1px;
+					width: 8px;
+					height: 16px;
+					border: solid rgb(170, 155, 119);
+					border-width: 0 5px 5px 0;
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+
+	.select-all-button {
+		cursor: pointer;
+		font-size: 14px;
+		font-family: "Quicksand";
+		line-height: 1.2;
+		color: rgb(255, 255, 255);
+		text-transform: uppercase;
+		border: 1px solid rgb(170, 155, 119);
+		border-radius: 3px;
+		background-color: rgb(170, 155, 119);
+		width: 204px;
+		height: 52px;
+	}
+}

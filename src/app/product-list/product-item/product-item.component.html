@@ -1,0 +1,23 @@
+<div class="product">
+	<div class="product-info-container">
+		<div class="top-part">
+			<dropdown
+				class="sizes-container"
+				[values]="product.sizes"
+				[title]="'size'"
+			></dropdown>
+			<colors-info [colors]="product.colors"></colors-info>
+		</div>
+		<div class="image-container">
+			<img [src]="imageUrl"/>
+		</div>
+		<div class="bottom-part">
+			<div class="name-container">
+				<span>{{product.name}}</span>
+			</div>
+			<div class="price-container">
+				<span>{{product.price | currency:"EUR"}}</span>
+			</div>
+		</div>
+	</div>
+</div>

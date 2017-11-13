@@ -1,0 +1,17 @@
+<div class="expansion-panel">
+	<div
+		class="selected-value"
+		*ngIf="!toggleState; else expandedBlock"
+	>
+		<span>{{selectedValue}}</span>
+		<span class="arrow-down" (click)="onToggleState()"></span>
+	</div>
+	<ng-template #expandedBlock>
+		<div class="expanded">
+			<div *ngFor="let value of values; let i = index">
+				<span (click)="onSelectValue(value)">{{value}}</span>
+				<span class="arrow-up" *ngIf="i === 0" (click)="onToggleState()"></span>
+			</div>
+		</div>
+	</ng-template>
+</div>

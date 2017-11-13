@@ -1,0 +1,21 @@
+<div class="product-info">
+	<div class="image-container">
+		<img [src]="imageUrl"/>
+	</div>
+	<div class="info-container">
+		<table>
+			<tr>
+				<td><span>{{product.price | currency:"EUR"}}</span></td>
+				<td><span>Price</span></td>
+			</tr>
+			<tr>
+				<td><colors-info [colors]="product.colors"></colors-info></td>
+				<td><span>Colors</span></td>
+			</tr>
+			<tr>
+				<td><span>{{product.sizes.join(',')}}</span></td>
+				<td><span>Sizes</span></td>
+			</tr>
+		</table>
+	</div>
+</div>

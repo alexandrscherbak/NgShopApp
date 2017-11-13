@@ -1,0 +1,22 @@
+<filters-bar
+	[filterOptions]="filterOptions"
+	(sortOptionChanged)="onSortOptionChanged()"
+></filters-bar>
+<div *ngIf="productBase">
+	<product-carousel
+		*ngIf="filterOptions.types[0].checked"
+		[productList]="productBase.men"
+		(productItemClicked)="onProductItemClicked($event)"
+	></product-carousel>
+	<product-carousel
+		*ngIf="filterOptions.types[1].checked"
+		headerAlignLeft="true"
+		[productList]="productBase.women"
+		(productItemClicked)="onProductItemClicked($event)"
+	></product-carousel>
+	<product-carousel
+		*ngIf="filterOptions.types[2].checked"
+		[productList]="productBase.children"
+		(productItemClicked)="onProductItemClicked($event)"
+	></product-carousel>
+</div>

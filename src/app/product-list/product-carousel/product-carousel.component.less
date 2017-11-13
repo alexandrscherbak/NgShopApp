@@ -1,0 +1,72 @@
+:host {
+	display: block;
+}
+.header {
+	.title, .title-on-the-right {
+		display: flex;
+
+		hr {
+			height: 0;
+			width:100%;
+		}
+
+		span {
+			font-size: 20px;
+			font-family: "Quicksand";
+			color: rgb(66, 66, 66);
+			text-transform: uppercase;
+			line-height: 1.2;
+		}
+	}
+
+	.title {
+		span {
+			padding-right: 30px;
+		}
+	}
+
+	.title-on-the-right {
+		span {
+			padding-left: 30px;
+		}
+	}
+
+	.controls {
+		color: rgb(170, 155, 119);
+		font-size: 16px;
+		font-family: "Quicksand";
+		line-height: 1.2;
+		text-align: right;
+
+		.arrow-left, .arrow-right {
+			cursor: pointer;
+			&:after {
+				border-style: solid;
+				border-width: 0 2px 2px 0;
+				content: '';
+				padding: 3px;
+				vertical-align: middle;
+				display: inline-block;
+			}
+		}
+
+		.arrow-left:after {
+			transform: rotate(135deg);
+		}
+
+		.arrow-right:after {
+			transform: rotate(315deg);
+		}
+	}
+}
+
+.carousel-container {
+	position: relative;
+}
+.carousel-wrapper {
+	overflow: hidden;
+}
+.carousel {
+	display: flex;
+	transition: transform 1s;
+}

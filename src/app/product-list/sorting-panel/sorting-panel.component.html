@@ -1,0 +1,8 @@
+<div class="sorting-panel">
+	<p class="sort-by-label">Sort By</p>
+	<expansion-panel
+		[values]="sortOptionsNames"
+		[selectedValue]="selectedValue"
+		(valueSelected)="onValueSelected($event)"
+	></expansion-panel>
+</div>

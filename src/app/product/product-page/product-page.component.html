@@ -1,0 +1,6 @@
+<navigation-panel></navigation-panel>
+<product-name *ngIf="product" [name]="product.name"></product-name>
+<product-info
+	*ngIf="product"
+	[style.height]="'calc(100% - 160px)'"
+	[product]="product"></product-info>

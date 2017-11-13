@@ -1,0 +1,54 @@
+.expansion-panel {
+	display: inline-block;
+	cursor: default;
+	.selected-value {
+		padding: 10px;
+	}
+
+	span {
+		font-size: 16px;
+		font-family: "Quicksand";
+		color: rgb(66, 66, 66);
+		text-transform: uppercase;
+		line-height: 1.2;
+	}
+
+	.expanded {
+		position: absolute;
+		margin-top: -24px;
+		padding: 10px;
+		z-index: 100;
+		div {
+			padding-bottom: 10px;
+			span {
+				cursor: pointer;
+			}
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
+		background-color: rgb(245, 246, 247);
+	}
+
+	.arrow-down, .arrow-up {
+		cursor: pointer;
+		color: black;
+		&:after {
+			border-style: solid;
+			border-width: 0 2px 2px 0;
+			content: '';
+			padding: 4px;
+			vertical-align: middle;
+			display: inline-block;
+		}
+	}
+
+	.arrow-down:after {
+		transform: rotate(45deg);
+		margin-bottom: 8px;
+	}
+
+	.arrow-up:after {
+		transform: rotate(225deg);
+	}
+}

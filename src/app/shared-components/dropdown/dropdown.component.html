@@ -1,0 +1,17 @@
+<div class="dropdown">
+	<div *ngIf="values.length > 1; else singleValue">
+		<span>{{title}}</span>
+		<span
+			[ngClass]="{'arrow-down': !toggleState, 'arrow-up': toggleState}"
+			(click)="onToggleState($event)"
+		></span>
+	</div>
+	<ng-template #singleValue>
+		<span>{{values[0]}}</span>
+	</ng-template>
+	<div class="expanded" *ngIf="toggleState && values.length > 1">
+		<div *ngFor="let value of values">
+			<span>{{value}}</span>
+		</div>
+	</div>
+</div>

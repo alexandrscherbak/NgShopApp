@@ -1,0 +1,9 @@
+<div class="type-checkboxes-panel">
+	<div class="checkboxes-container">
+		<label class="container" *ngFor="let type of typeCheckboxesOptions">{{type.name}}
+			<input type="checkbox" [(ngModel)]="type.checked">
+			<span class="checkmark"></span>
+		</label>
+	</div>
+	<button class="select-all-button" (click)="onSelectAllClicked()">See All Products</button>
+</div>
